@@ -1,0 +1,79 @@
+###
+POST /api/users/add
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "posts": [
+    {
+      "title": "First Post",
+      "content": "This is the content of the first post.",
+      "user": {
+        "id": 1,
+        "name": "John Doe",
+        "email": "johndoe@example.com"
+      }
+    },
+    {
+      "title": "Second Post",
+      "content": "This is the content of the second post.",
+      "user": {
+        "id": 1,
+        "name": "John Doe",
+        "email": "johndoe@example.com"
+      }
+    }
+  ]
+}
+
+###
+
+GET /api/users?email=johndoe@example.com
+Host: localhost:8080
+Content-Type: application/json
+
+###
+GET /api/users?email=alicejohnson@example.com
+Host: localhost:8080
+Content-Type: application/json
+
+###
+POST /api/users/add
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "Alice Johnson",
+  "email": "alicejohnson@example.com",
+  "posts": []
+}
+
+###
+PUT /api/users/userId/2
+Host: localhost:8080
+Content-Type: application/json
+
+{
+"name": "Alice Johnson",
+  "email": "alicejohnson@example.com",
+  "posts": [
+    {
+      "title": "First Post of Alice",
+      "content": "This is the content of the first post."
+    },
+    {
+      "title": "Second Post of Alice",
+      "content": "This is the content of the Second Post."
+    }
+  ]
+}
+
+###
+DELETE /api/users/userId/2
+Host: localhost:8080
+
+###
+GET /api/posts?title=Alice
+Host: localhost:8080
